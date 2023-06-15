@@ -27,7 +27,8 @@ include('ketnoi.php');
         $rowPage = 5;
         if (!isset($_GET['page'])) {
             $page = 1;
-            $sql = "SELECT * FROM dmsanpham";
+            $perRow = $page * $rowPage - $rowPage;
+            $sql = "SELECT * FROM dmsanpham LIMIT $perRow,$rowPage";
             $query = mysqli_query($conn, $sql);
         } else {
             $page = $_GET['page'];
