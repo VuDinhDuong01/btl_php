@@ -52,9 +52,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/quantri.css" />
-    <!-- Boxicons -->
+  
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <!-- My CSS -->
+ 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cssquantri.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -64,8 +64,6 @@
 
 <body>
 
-
-    <!-- SIDEBAR -->
     <section id="sidebar">
         <a href="#" class="brand">
             <i class='bx bxs-smile'></i>
@@ -127,39 +125,32 @@
             </li>
         </ul>
     </section>
-    <!-- SIDEBAR -->
 
-
-
-    <!-- CONTENT -->
     <section id="content">
 
         <nav>
 
-            <form action="#">
+            <form action="#" method="post">
                 <div class="form-input">
-                    <input type="search" placeholder="Search...">
-                    <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+                    <input type="search" placeholder="Search..." name='search'>
+                    <button type="submit" name="submitbtn" class="search-btn"><i class='bx bx-search'></i></button>
                 </div>
             </form>
-
+            <?php
+            if (isset($_POST['submitbtn'])) {
+                $search = $_POST['search'];
+            }
+            ?>
             <a href="#" class="profile">
                 Xin Chào,<?php echo $_SESSION['email'] ?>
             </a>
         </nav>
-        <!-- NAVBAR -->
-
-        <!-- MAIN -->
         <main>
             <div class="head-title">
                 <div class="left">
                     <h1>Dashboard</h1>
-
                 </div>
-
             </div>
-
-
             <?php
             if (isset($_GET['page_layout'])) {
                 switch ($_GET['page_layout']) {
@@ -184,9 +175,9 @@
                     case 'xoadm':
                         include('xoadm.php');
                         break;
-                        case 'xoasp':
-                            include('xoasp.php');
-                            break;
+                    case 'xoasp':
+                        include('xoasp.php');
+                        break;
 
                     case 'quantri':
                         echo "<script>window.location.href = 'quantri.php';</script>";

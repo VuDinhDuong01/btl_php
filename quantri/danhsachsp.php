@@ -61,12 +61,15 @@ include_once('ketnoi.php');
         }
         ?>
     </table>
-    <nav aria-label="Page navigation example" class='mt-3'>
-        <ul class="pagination">
-            <?php echo  $listPage;
-            ?>
-        </ul>
-    </nav>
+
+ 
+ 
+  <nav aria-label="Page navigation example">
+  <ul class="pagination">
+  <?php echo  $listPage;?>
+  </ul>
+</nav>
+
 </div>
 
  

@@ -45,7 +45,8 @@ h2 span{
 #form-login ul{
 	overflow:hidden;
 	width:380px;
-	height:auto;
+	/* height:auto; */
+	height:50px;
 	padding:20px 10px;
 	}
 
@@ -59,7 +60,7 @@ h2 span{
 #form-login ul li label{
 	float:left;
 	width:20%;
-	height:auto;
+	/* height:auto; */
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:12px;
 	font-weight:bold;
@@ -69,12 +70,17 @@ h2 span{
 	
 #form-login ul li{
 	float:left;
+	height:50px;
 	}	
 
-#form-login ul li input[type="text"], input[type="password"]{
+/* #form-login ul li input[type="text"], input[type="password"]{
 	width:200px;
-	height:15px;
+	height:50px;
 	border:1px solid #CCC;
+	} */
+
+	input{
+		height:50px;
 	}
 
 
