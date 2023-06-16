@@ -1,7 +1,7 @@
-@charset "utf-8";
-/* CSS Document */
+@charset "utf-8"; 
+CSS Document 
 
-/*---------------- Reset CSS -------------------*/
+
 *{
 	margin:0px;
 	padding:0px;
@@ -12,27 +12,27 @@ body{
 	font-size:12px;
 	color:#666;
 	background:url(../anh/bg.gif) top left repeat;
-	}
+	} 
 
-/*---------------- Wrapper -------------------*/	
+
 #wrapper{
 	width:1000px;
 	height:auto;
 	margin:30px auto;
-	}	
+	}	 
 	
-/*---------------- Navbar -------------------*/	
-#header{
+
+ #header{
 	width:1000px;
 	height:auto;
 	background:#FFF;
-	}
+	} 
 
 #navbar{
 	position:relative;
 	width:1000px;
 	height:auto;
-	}	
+	}	 
 	
 #navbar ul{
 	width:1000px;
@@ -40,7 +40,7 @@ body{
 	line-height:30px;
 	border-top:3px solid #840000;
 	border-bottom:1px solid #CCC;
-	}	
+	}	 
 	
 #navbar ul li{
 	float:left;
@@ -54,21 +54,24 @@ body{
 	text-transform:capitalize;
 	padding:0px 12px;
 	border-right:1px solid #CCC;
-	}
+	} 
 	
 #navbar ul li:hover{
-	background:#840000;
-	cursor:pointer;
-	}
+	 background:#840000; 
+	 cursor:pointer;
+	} 
 	
-#navbar ul li:hover a{
+ #navbar ul li:hover a{
 	color:#FFF;
-	}			
+	}			 
 
-#navbar ul li#admin-home{
-	background:#840000;
+ #navbar ul li#admin-home{
+	background:red;
 	}
-	
+#sidebar{
+background:red
+}
+
 #navbar ul li a{
 	text-decoration:none;
 	color:#000;
@@ -109,7 +112,7 @@ body{
 	color:#FF0;
 	}	
 	
-/*---------------- Banner -------------------*/	
+	
 #banner{
 	width:960px;
 	height:auto;
@@ -117,7 +120,7 @@ body{
 	border-bottom:1px solid #CCC;
 	}
 
-/*---------------- Body -------------------*/		
+
 #body{
 	width:960px;
 	height:auto;
@@ -141,12 +144,12 @@ body{
 #main{
 	width:938px;
 	height:auto;
-	/* border:1px solid #CCC; */
+	border:1px solid #CCC; 
 	padding:20px 10px;
 	margin-top:10px;
 	}
 
-/*------------------ Footer-----------------*/
+
 #footer{
 	width:1000px;
 	height:auto;

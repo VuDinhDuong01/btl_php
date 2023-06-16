@@ -26,13 +26,14 @@ if (isset($_POST['submit'])) {
 			$_SESSION['email'] = $email;
 			$_SESSION['password'] = $password;
             $_SESSION['quyentruycap']=$result['quyentruycap'];
-
-             echo" <script>window.location.href = '../../khachhang.php';</script>";
+            echo" <script>window.location.href = '../../khachhang.php';</script>";
 		}
+	}else
+	{
+		$error = "Tài khoản không chính xác";
 	}
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -40,7 +41,7 @@ if (isset($_POST['submit'])) {
 	<meta charset="utf8" />
 	<title>Shop bán máy tính</title>
 	<link rel="stylesheet" type="text/css" href="css/dangnhap.css" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
 </head>
 
 <body>
@@ -49,7 +50,7 @@ if (isset($_POST['submit'])) {
 		<form method="post" class="col-3 mx-auto d-flex align-items-center " style="height: 100vh;">
 			<ul>
 			<h4>Tài Khoản Đăng Nhập</h4>
-			<center><span style="color:red;"><?php echo $error; ?></span></center>
+			<center><span style="color:red;" class="my-3"><?php echo $error; ?></span></center>
 				<label for="basic-url">Tài Khoản</label>
 				<div class="input-group mb-3">
 					<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='email' />
@@ -60,7 +61,6 @@ if (isset($_POST['submit'])) {
 				<button type="submit" name='submit' class="btn btn-primary">Đăng Nhập</button>
 				<button type="reset" class="btn btn-primary">Làm Mới</button>
 			</ul>
-
 		</form>
 	 <?php
 	

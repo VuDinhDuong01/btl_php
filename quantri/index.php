@@ -16,8 +16,8 @@ if (isset($_POST['submit'])) {
 		$password = $_POST['password'];
 	}
 
-	if (isset($email) && isset($password) ) {
-		if($email == 'duong@gmail.com'){
+	if (isset($email) && isset($password)) {
+		if ($email == 'duong@gmail.com') {
 			$sql = "SELECT * FROM thanhvien WHERE email='$email' AND password= '$password'";
 			$query = mysqli_query($conn, $sql);
 			$rows = mysqli_num_rows($query);
@@ -28,10 +28,9 @@ if (isset($_POST['submit'])) {
 				$_SESSION['password'] = $password;
 				header('location:quantri.php');
 			}
-		}else{
+		} else {
 			$error = 'Tài khoản này không có quyền';
 		}
-		
 	}
 }
 ?>
@@ -47,25 +46,62 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-	<?php  
-	 if ( !isset($_SESSION['emailadmin']) ) {
-	?> 
-		<form method="post" class="col-3 mx-auto d-flex align-items-center " style="height: 100vh;">
-			<ul>
-			<h4>đăng nhập hệ thống quản trị</h4>
-			<center><span style="color:red;"><?php echo $error; ?></span></center>
-				<label for="basic-url">Tài Khoản</label>
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='email' />
-				</div><label for="basic-url">Mật Khẩu</label>
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name='password' />
-				</div>
-				<button type="submit" name='submit' class="btn btn-primary">Đăng Nhập</button>
-				<button type="reset" class="btn btn-primary">Làm Mới</button>
-			</ul>
+	<?php
+	if (!isset($_SESSION['emailadmin'])) {
+	?>
 
-		</form>
+		<section class="vh-100 " style="background-color: #9A616D; height:100vh">
+			<div class="container py-5 h-100">
+				<div class="row d-flex justify-content-center align-items-center h-100">
+					<div class="col col-xl-10">
+						<div class="card" style="border-radius: 1rem;">
+							<div class="row g-0">
+								<div class="col-md-6 col-lg-5 d-none d-md-block ">
+									<img src="anh/anh-login.webp" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%" />
+								</div>
+
+								<div class="col-md-6 col-lg-7 d-flex align-items-center">
+									<div class="card-body p-4 p-lg-5 text-black">
+
+										<form method="post">
+
+											<div class="d-flex align-items-center mb-3 pb-1">
+												<i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+												<span class="h1 fw-bold mb-0">Chào bạn đến với Logo</span>
+											</div>
+
+											<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+											<div class="form-outline mb-4">
+												<label class="form-label" for="form2Example17">Email address</label>
+												<input type="text" id="form2Example17" name="email" class="form-control form-control-lg" />
+
+											</div>
+
+											<div class="form-outline mb-4">
+												<label class="form-label" for="form2Example27">Password</label>
+												<input type="text" id="form2Example17" name="password" class="form-control form-control-lg" />
+												<center><span style="color:red;"><?php echo $error; ?></span></center>
+											</div>
+
+											<div class="pt-1 mb-4">
+												<button type="submit" name="submit" class="btn btn-dark btn-lg btn-block">Login</button>
+											</div>
+
+											<a class="small text-muted" href="#!">Forgot password?</a>
+											<p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!" style="color: #393f81;">Register here</a></p>
+											<a href="#!" class="small text-muted">Terms of use.</a>
+											<a href="#!" class="small text-muted">Privacy policy</a>
+										</form>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	<?php
 	} else {
 		header('location:quantri.php');

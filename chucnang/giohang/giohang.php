@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css/giohang.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 <div class="prd-block">
     <h2>giỏ hàng của bạn</h2>
     <div class="cart">
@@ -16,19 +16,15 @@
                     }
                 }
             }
-
             $arrId = array();
-            //Lấy ra id sản phẩm từ mảng session
             foreach ($_SESSION['giohang'] as $id_sp => $sl) {
                 $arrId[] = $id_sp;
             }
-            //Tách mảng arrId thành 1 chuỗi và ngăn cách bởi dấu ,
             $strID = implode(',', $arrId);
             if (isset($sl)) {
                 $sql = "SELECT * FROM sanpham WHERE id_sp IN ($strID)";
                 $query = mysqli_query($conn, $sql);
                 $totalPriceAll = 0;
-
         ?>
                 <form method="post" id="giohang">
                     <table class="table">
