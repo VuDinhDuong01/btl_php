@@ -142,7 +142,7 @@
             }
             ?>
             <a href="#" class="profile">
-                Xin Chào,<?php echo $_SESSION['email'] ?>
+                Xin Chào,<?php echo $_SESSION['emailadmin'] ?>
             </a>
         </nav>
         <main>

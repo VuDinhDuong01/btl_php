@@ -60,14 +60,15 @@ body{
 	margin-left:5px;
 	}
 
-#cart{
+#id{
 	position:absolute;
 	width:213px;
 	height:77px;
 	background:url(../anh/cart.png) top  left no-repeat;
-	top:-3px;
-	left:767px;
+	top:90px;
+	left:800px;
 	padding-top:40px;
+	background:red;
 	}
 
 #cart p{
@@ -97,13 +98,15 @@ body{
 	width:960px;
 	height:auto;
 	padding:20px;
-	}
+	display:flex; 
+	justify-content:between;
+}
 	
 #main-bar #logo, #banner{
 	float:left;
 	}
 	
-#banner{
+ #banner{
 	width:343px;
 	height:31px;
 	background:url(../anh/banner.png) top left no-repeat;

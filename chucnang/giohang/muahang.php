@@ -11,6 +11,7 @@
                 <td width="20%">Thành tiền</td>
             </tr>
             <?php
+            include("cauhinh/ketnoi.php");
                 $arrId = array();
                 //Lấy ra id sản phẩm từ mảng session
                 foreach ($_SESSION['giohang'] as $id_sp => $sl) {
@@ -19,9 +20,9 @@
                 //Tách mảng arrId thành 1 chuỗi và ngăn cách bởi dấu ,
                 $strID = implode(',', $arrId);
                 $sql = "SELECT * FROM sanpham WHERE id_sp IN ($strID)";
-                $query = mysql_query($sql);
+                $query = mysqli_query($conn,$sql);
                 $totalPriceAll = 0;
-                while($row = mysql_fetch_array($query)){
+                while($row = mysqli_fetch_array($query)){
                 $totalPrice = $_SESSION['giohang'][$row['id_sp']]*$row['gia_sp'];
             ?>
             <tr>
@@ -65,7 +66,7 @@
     $strId = implode(', ', $arrId);
     $sql = "SELECT * FROM sanpham WHERE id_sp IN($strId) ORDER BY id_sp
     DESC";
-    $query = mysql_query($sql);
+    $query = mysqli_query($conn,$sql);
     }
     $strBody = '';
     // Thông tin Khách hàng
@@ -89,7 +90,7 @@
     <td width="20%"><b>Thành tiền</b></td>
     </tr>';
     $totalPriceAll = 0;
-    while($row = mysql_fetch_array($query)){
+    while($row = mysqli_fetch_array($query)){
     $totalPrice = $row['gia_sp']*$_SESSION['giohang'][$row['id_sp']];
     $strBody .= '<tr>
     <td class="prd-name">'.$row['ten_sp'].'</td>

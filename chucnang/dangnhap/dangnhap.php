@@ -1,7 +1,6 @@
 <?php
+include('../../cauhinh/ketnoi.php');
 session_start();
-include('ketnoi.php');
-
 $error = NULL;
 if (isset($_POST['submit'])) {
 	if ($_POST['email'] == "") {
@@ -16,22 +15,20 @@ if (isset($_POST['submit'])) {
 		$password = $_POST['password'];
 	}
 
-	if (isset($email) && isset($password) ) {
-		if($email == 'duong@gmail.com'){
-			$sql = "SELECT * FROM thanhvien WHERE email='$email' AND password= '$password'";
-			$query = mysqli_query($conn, $sql);
-			$rows = mysqli_num_rows($query);
-			if ($rows <= 0) {
-				$error = 'Tài khoản hoặc mật khẩu chưa đúng';
-			} else {
-				$_SESSION['emailadmin'] = $email;
-				$_SESSION['password'] = $password;
-				header('location:quantri.php');
-			}
-		}else{
-			$error = 'Tài khoản này không có quyền';
+	if (isset($email) && isset($password) && $email !='duong@gmail.com') {
+		$sql = "SELECT * FROM thanhvien WHERE email='$email' AND password= '$password'";
+		$query = mysqli_query($conn, $sql);
+        $result=mysqli_fetch_assoc($query);
+		$rows = mysqli_num_rows($query);
+		if ($rows <= 0) {
+			$error = 'Tài khoản hoặc mật khẩu chưa đúng';
+		} else {
+			$_SESSION['email'] = $email;
+			$_SESSION['password'] = $password;
+            $_SESSION['quyentruycap']=$result['quyentruycap'];
+
+             echo" <script>window.location.href = '../../hello.php';</script>";
 		}
-		
 	}
 }
 ?>
@@ -47,12 +44,11 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-	<?php  
-	 if ( !isset($_SESSION['emailadmin']) ) {
-	?> 
+	 <?php
+	?>  
 		<form method="post" class="col-3 mx-auto d-flex align-items-center " style="height: 100vh;">
 			<ul>
-			<h4>đăng nhập hệ thống quản trị</h4>
+			<h4>Tài Khoản Đăng Nhập</h4>
 			<center><span style="color:red;"><?php echo $error; ?></span></center>
 				<label for="basic-url">Tài Khoản</label>
 				<div class="input-group mb-3">
@@ -66,12 +62,9 @@ if (isset($_POST['submit'])) {
 			</ul>
 
 		</form>
-	<?php
-	} else {
-		header('location:quantri.php');
-	}
-
-	?>
+	 <?php
+	
+	?> 
 </body>
 
 </html>

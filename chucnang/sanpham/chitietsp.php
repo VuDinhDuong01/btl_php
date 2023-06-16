@@ -13,20 +13,16 @@
         <div class="prd-img d-flex align-items-center" style="height: 50vh;"><img class='my-auto' width="80%" src="<?php echo $row['anh_sp'] ?>" /></div>
         <div class="prd-intro">
             <h3 class='mb-5'><?php echo $row['ten_sp'] ?></h3>
-            <p>Giá sản phẩm: <span><?php echo $row['gia_sp'] ?> VNĐ</span></p>
+            <p>Giá sản phẩm: <span><?php echo number_format($row['gia_sp'], 0, ',', '.') ?> VNĐ</span></p>
             <p>Tình trạng: <span>Vẫn còn</span></p>
             <p>Đi kèm: <span>Hôp, sách ,sạc, cáp, tai nghe</span></p>
             <p>Bảo hành: <span> 12 tháng </span></p>
             <p>Mô tả: <span><?php echo $row['chi_tiet_sp'] ?></span></p>
             <p class="add-cart"><a href="chucnang/giohang/themhang.php?id_sp=<?php echo $row['id_sp'] ?>"><span>đặt mua</span></a></p>
-            <button type="button" class="btn btn-primary">Đặt Hàng</button>
+             <a href="chucnang/giohang/themhang.php?id_sp=<?= $id_sp ?>">  <button type="button" class="btn btn-primary" >Đặt Hàng</button></a>
         </div>
-
         <div class="clear"></div>
-
-
     </div>
-
     <div class="prd-comment">
 
         <form method="post">
@@ -48,7 +44,7 @@
         $sql = "INSERT INTO comment (id_sp,ten,sodienthoai,comment,date) VALUES ($id_sp,'$ten','$dien_thoai','$binh_luan','$ngay_gio')";
         $query = mysqli_query($conn, $sql);
     }
-    
+
     ?>
     <div class="comment-list">
         <?php
