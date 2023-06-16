@@ -29,30 +29,30 @@
         $listPage = '';
         
         if ($page > 1) {
-            $listPage .= '<a href="index.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=1"> First </a>';
+            $listPage .= '<a href="khachhang.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=1"> First </a>';
             $prev = $page - 1;
-            $listPage .= '<a href="index.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=' . $prev . '"> << </a>';
+            $listPage .= '<a href="khachhang.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=' . $prev . '"> << </a>';
         }
       
         for ($i = 1; $i <= $totalPage; $i++) {
             if ($i == $page) {
                 $listPage .=  '<span> ' . $i . ' </span>';
             } else {
-                $listPage .= '<a href="index.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=' . $i . '"> ' . $i . ' </a>';
+                $listPage .= '<a href="khachhang.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=' . $i . '"> ' . $i . ' </a>';
             }
         }
         
         if ($page < $totalPage) {
             $next = $page + 1;
-            $listPage .= '<a href="index.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=' . $next . '"> >> </a>';
-            $listPage .= '<a href="index.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=' . $totalPage . '"> Last </a>';
+            $listPage .= '<a href=khachhang.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=' . $next . '"> >> </a>';
+            $listPage .= '<a href=khachhang.php?page_layout=danhsachsp&id_dm=' . $id_dm . '&ten_dm=' . $ten_dm . '&page=' . $totalPage . '"> Last </a>';
         }
         $i = 0;
         while ($row = mysqli_fetch_array($query)) {
         ?>
             <div class="prd-item">
-                <a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><img width="80" height="144" src="<?php echo $row['anh_sp'] ?>" /></a>
-                <h3><a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><?php echo $row['ten_sp'] ?></a></h3>
+                <a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><img width="80" height="144" src="<?php echo $row['anh_sp'] ?>" /></a>
+                <h3><a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><?php echo $row['ten_sp'] ?></a></h3>
                 <p><span>Giá: <?= number_format($row['gia_sp'], 0, ',', '.') ?> VNĐ</span></p>
             </div>
         <?php

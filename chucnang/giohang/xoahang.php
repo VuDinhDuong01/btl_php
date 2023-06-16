@@ -10,5 +10,5 @@
 	if(count($_SESSION['giohang'])==0){
 		unset($_SESSION['giohang']);
 	}
-	header('location:../../index.php?page_layout=giohang');
+	header('location:../../khachhang.php?page_layout=giohang');
 ?>

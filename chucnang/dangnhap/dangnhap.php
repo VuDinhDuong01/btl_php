@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 			$_SESSION['password'] = $password;
             $_SESSION['quyentruycap']=$result['quyentruycap'];
 
-             echo" <script>window.location.href = '../../hello.php';</script>";
+             echo" <script>window.location.href = '../../khachhang.php';</script>";
 		}
 	}
 }

@@ -7,7 +7,7 @@
         $query = mysqli_query($conn,$sql);
         while($row = mysqli_fetch_assoc($query)){
     ?>
-    	<li><a href="index.php?page_layout=danhsachsp&id_dm=<?= $row['id_dm'] ?>&tendanhmuc=<?= $row['tendanhmuc'] ?>"><?php echo $row['tendanhmuc'] ?></a></li>
+    	<li><a href="khachhang.php?page_layout=danhsachsp&id_dm=<?= $row['id_dm'] ?>&tendanhmuc=<?= $row['tendanhmuc'] ?>"><?php echo $row['tendanhmuc'] ?></a></li>
     <?php
         }
     ?>

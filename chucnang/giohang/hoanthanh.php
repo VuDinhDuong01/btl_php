@@ -13,10 +13,7 @@
 
 <script type="text/javascript">
 
-/*** 
-    Simple jQuery Slideshow Script
-    Released by Jon Raasch (jonraasch.com) under FreeBSD license: free to use or modify, not responsible for anything, etc.  Please link out to me if you like it :)
-***/
+
 
 function slideSwitch() {
     var $active = $('#slideshow IMG.active');
@@ -80,10 +77,9 @@ $(function() {
             </ul>
         </div>
     </div>
-    <!-- End Header -->
-    <!-- Body -->
+ 
     <div id="body">
-    	<!-- Left Column -->
+    	
     	<div id="l-col">
         	<div class="l-sidebar">
             	<h2>tư vấn online</h2>

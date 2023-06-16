@@ -65,7 +65,7 @@ include('cauhinh/ketnoi.php');
             </div>
             <div id="main-bar">
 
-                <div id="logo"><a href="index.php"><img width"100" height="100" src="anh/logo.jpg" /></a></div>
+                <div id="logo"><a href="khachhang.php"><img width"100" height="100" src="anh/logo.jpg" /></a></div>
                 <div id="banner"></div>
                 <?php
                 include_once('chucnang/giohang/giohangcuaban.php');
@@ -73,10 +73,10 @@ include('cauhinh/ketnoi.php');
             </div>
             <div id="navbar">
                 <ul>
-                    <li id="menu-home"><a href="index.php">trang chủ</a></li>
-                    <li><a href="index.php?page_layout=gioithieu">giới thiệu</a></li>
-                    <li><a href="index.php?page_layout=dichvu">dịch vụ</a></li>
-                    <li><a href="index.php?page_layout=lienhe">liên hệ</a></li>
+                    <li id="menu-home"><a href="khachhang.php">trang chủ</a></li>
+                    <li><a href="khachhang.php?page_layout=gioithieu">giới thiệu</a></li>
+                    <li><a href="khachhang.php?page_layout=dichvu">dịch vụ</a></li>
+                    <li><a href="khachhang.php?page_layout=lienhe">liên hệ</a></li>
                 </ul>
             </div>
 
@@ -132,7 +132,7 @@ include('cauhinh/ketnoi.php');
                                 include_once('chucnang/giohang/muahang.php');
                                 break;
                             default:
-                                include_once('chucnang/sanpham/sanphamdacbiet.php');
+                               
                                 include_once('chucnang/sanpham/sanphammoi.php');
                         }
                     } else {

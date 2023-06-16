@@ -9,5 +9,5 @@
 			}
 			?>
 		</span> sản phẩm</p> 
-	<p><a href="index.php?page_layout=giohang"><button type="button" class="btn btn-primary">Chi tiết giỏ hàng</button></a></p>
+	<p><a href="khachhang.php?page_layout=giohang"><button type="button" class="btn btn-primary">Chi tiết giỏ hàng</button></a></p>
 </div>

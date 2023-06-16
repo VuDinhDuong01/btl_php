@@ -19,8 +19,8 @@
         while ($row = mysqli_fetch_assoc($query)) {
         ?>
             <div class="prd-item">
-                <a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><img width="80" height="144" src="<?php echo $row['anh_sp'] ?>" /></a>
-                <h3><a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><?php echo $row['ten_sp'] ?></a></h3>
+                <a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><img width="80" height="144" src="<?php echo $row['anh_sp'] ?>" /></a>
+                <h3><a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><?php echo $row['ten_sp'] ?></a></h3>
                 <p class="price"><span>Giá: <?php echo $row['gia_sp'] ?> VNĐ</span></p>
                 </p>
             </div>

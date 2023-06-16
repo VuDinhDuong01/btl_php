@@ -9,8 +9,8 @@
             
         ?>
             <div class="prd-item">
-                <a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><img width="80" height="144" src="<?= $row['anh_sp'] ?>" /></a>
-                <h3><a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><?php echo $row['ten_sp'] ?></a></h3>
+                <a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><img width="80" height="144" src="<?= $row['anh_sp'] ?>" /></a>
+                <h3><a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><?php echo $row['ten_sp'] ?></a></h3>
 
                 <p class="price"><span>Giá: <?php echo number_format($row['gia_sp'], 0, ',', '.') ?> VNĐ</span></p>
             </div>

@@ -12,7 +12,6 @@
     	$fw = fwrite($fo, $fr);
     	$fc = fclose($fo);
     ?>
-	
     	<p>Hiện có <span><?php
     	echo $fr;
     	?></span> người đang xem</p>

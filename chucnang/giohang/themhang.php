@@ -7,5 +7,5 @@
 	}else{
 		$_SESSION['giohang'][$id_sp]=1;
 	}
-	header('location:../../index.php?page_layout=giohang');
+	header('location:../../khachhang.php?page_layout=giohang');
 ?>

@@ -6,6 +6,7 @@
         <?php
         include('cauhinh/ketnoi.php');
         if (isset($_SESSION['giohang'])) {
+            
             if (isset($_POST['sl'])) {
                 foreach ($_POST['sl'] as $id_sp => $sl) {
                     if ($sl == 0) {
@@ -61,11 +62,9 @@
                     </table>
                 </form>
                 <p>Tổng giá trị giỏ hàng là: <span><?php echo  number_format($totalPriceAll, 0, ',', '.')  ?> VNĐ</span></p>
-               
-                <a href="index.php"><button type="button" class="btn btn-success">Tiếp tục mua hàng</button></a> 
-                <button type="button" class="btn btn-success">Đặt Hàng</button>
-                <!-- <p class="update-cart"><a href="#" onclick="document.getElementById('giohang').submit();"><span>cập nhật giỏ hàng</span></a></p> -->
-                 
+
+                <a href="khachhang.php"><button type="button" class="btn btn-success">Tiếp tục mua hàng</button></a>
+                <a href="khachhang.php?page_layout=muahang"><button type="button" class="btn btn-success">Thanh Toán</button></a>
         <?php
             } else {
                 echo 'Giỏ hàng rỗng';
