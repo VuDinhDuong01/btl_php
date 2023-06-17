@@ -8,25 +8,23 @@ if (isset($_POST['submit'])) {
 	} else {
 		$email = $_POST['email'];
 	}
-
 	if ($_POST['password'] == "") {
 		$error = "Vui lòng nhập tài khoản và mật khẩu";
 	} else {
 		$password = $_POST['password'];
 	}
-
 	if (isset($email) && isset($password) && $email != 'duong@gmail.com') {
-		$query1 = "SELECT password FROM thanhvien WHERE email = '$email'";
+		$query1 = "SELECT password,id_thanhvien FROM thanhvien WHERE email = '$email'";
 		$resultemail = mysqli_query($conn, $query1);
 		$row = mysqli_fetch_assoc($resultemail);
 		if ($row && password_verify($password, $row['password'])) {
 			$_SESSION['email'] = $email;
-			$_SESSION['name'] = $name;
 			$_SESSION['password'] = $password;
 			$_SESSION['quyentruycap'] = $result['quyentruycap'];
+			$_SESSION['user_id'] = $row['id_thanhvien'];
 			echo " <script>window.location.href = '../../khachhang.php';</script>";
-		}else{
-			$error="Tài khoản không chính xác";
+		} else {
+			$error = "Tài khoản không chính xác";
 		}
 	} else {
 		$error = "Tài khoản không chính xác";
@@ -48,7 +46,6 @@ if (isset($_POST['submit'])) {
 	<?php
 	if (!isset($_SESSION['email'])) {
 	?>
-
 		<section class="vh-100 " style="background-color: #9A616D; height:100vh">
 			<div class="container py-5 h-100">
 				<div class="row d-flex justify-content-center align-items-center h-100">

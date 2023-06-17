@@ -51,7 +51,7 @@ include('cauhinh/ketnoi.php');
                                 <?= $_SESSION['email'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Giỏ hàng của tôi</a>
+                                <a class="dropdown-item" href="khachhang.php?page_layout=giohang">Giỏ hàng của tôi</a>
                                 <a class="dropdown-item" href="chucnang/dangnhap/dangxuat.php">Đăng xuất</a>
 
                             </div>
@@ -70,9 +70,6 @@ include('cauhinh/ketnoi.php');
                     <?php
                     }
                     ?>
-
-
-
                 </ul>
 
             </div>
@@ -89,12 +86,13 @@ include('cauhinh/ketnoi.php');
                 include_once('chucnang/thongke/thongke.php');
                 ?>
             </div>
-            <div class="col-9 w-100">
+           <div class="col-9 w-100">
                 <div class=' w-100'>
                     <img src="quantri/anh/banner.avif" class='w-100' alt="">
                 </div>
-                <!-- <div class='row'> -->
+                
                 <?php
+               
                 if (isset($_GET['page_layout'])) {
                     switch ($_GET['page_layout']) {
                         case 'gioithieu':
@@ -121,11 +119,13 @@ include('cauhinh/ketnoi.php');
                         case 'muahang':
                             include_once('chucnang/giohang/muahang.php');
                             break;
+                            case 'hoanthanh':
+                                include_once('chucnang/giohang/hoanthanh.php');
+                                break;
                         default:
                             include_once('chucnang/sanpham/sanphammoi.php');
                     }
                 } else {
-
                     include_once('chucnang/sanpham/sanphammoi.php');
                 }
 
@@ -145,13 +145,8 @@ include('cauhinh/ketnoi.php');
                         2 days ago
                     </div>
                 </div>
-
-
-
-
-
-
             </div>
+            
         </div>
     </div>
 </body>

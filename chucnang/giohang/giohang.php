@@ -7,6 +7,10 @@
      <div class="">
          <?php
             include('cauhinh/ketnoi.php');
+          
+            
+            //  $count = mysqli_num_rows($query);
+          
             if (isset($_SESSION['giohang'])) {
 
                 if (isset($_POST['sl'])) {
@@ -70,6 +74,7 @@
                     echo 'Giỏ hàng rỗng';
                 }
             } else {
+
                 echo 'Giỏ hàng rỗng';
             }
             ?>

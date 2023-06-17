@@ -18,20 +18,17 @@
             <p>Đi kèm: <span>Hôp, sách ,sạc, cáp, tai nghe</span></p>
             <p>Bảo hành: <span> 12 tháng </span></p>
             <p>Mô tả: <span><?php echo $row['chi_tiet_sp'] ?></span></p>
-           <?php
-             if(isset($_SESSION['email'])){
-                ?>
-                 <a href="chucnang/giohang/themhang.php?id_sp=<?php echo $row['id_sp'] ?>"><button type="submit" name="submitdathang" class="btn btn-primary">Đặt Hàng</button></a>
-                 <?php
-             }else{
-                ?>
-                <a href="chucnang/dangnhap/dangnhap.php"><button type="submit" name="submitdathang" class="btn btn-primary">đăng nhập để mua hàng</button></a>
-                <?php
-             }
+            <?php
+            if (isset($_SESSION['email'])) {
             ?>
-          
-             
-            
+                <a href="chucnang/giohang/themhang.php?id_sp=<?php echo $row['id_sp'] ?>"><button type="submit" name="submitdathang" class="btn btn-primary">Đặt Hàng</button></a>
+            <?php
+            } else {
+            ?>
+                <a href="chucnang/dangnhap/dangnhap.php"><button type="submit"  class="btn btn-primary">đăng nhập để mua hàng</button></a>
+            <?php
+            }
+            ?>
         </div>
         <div class="clear"></div>
     </div>
@@ -55,12 +52,14 @@
             $dien_thoai = $_POST['dien_thoai'];
             $binh_luan = $_POST['binh_luan'];
             $ngay_gio = date('Y-m-d ');
-            $sql = "INSERT INTO comment (id_sp,ten,sodienthoai,email,comment,date) VALUES ($id_sp,'$ten','$dien_thoai','$email','$binh_luan','$ngay_gio')";
+            $id_user=$_SESSION['user_id'];
+            echo $id_user;
+            $sql = "INSERT INTO comment (id_user_comment,id_sp,ten,sodienthoai,email,comment,date) VALUES ('$id_user','$id_sp','$ten','$dien_thoai','$email','$binh_luan','$ngay_gio')";
             $query = mysqli_query($conn, $sql);
         } else {
-            ?>
+    ?>
             <p class='text-xl text-danger'>Bạn cần đăng nhập tài khoản !</p>
-            <?php
+    <?php
         }
     }
 
@@ -69,31 +68,28 @@
         <?php
         $sql = "SELECT * FROM comment WHERE id_sp = $id_sp";
         $query = mysqli_query($conn, $sql);
-        $count=mysqli_num_rows($query);
-        if($count > 0){
+        $count = mysqli_num_rows($query);
+        if ($count > 0) {
             while ($row = mysqli_fetch_array($query)) {
-                ?>
-                    <ul>
-                        <li class="com-title"><?php echo $row['ten'] ?><br />
-                            <span>
-                                <?php
-                                $oriDate = $row['date'];
-                                $newDate = date('d-m-Y ', strtotime($oriDate));
-                                echo $newDate;
-                                ?>
-                            </span>
-                        </li>
-                        <li class="com-details"><?php
-                                                echo $row['comment'];
-                                                ?></li>
-                    </ul>
-                <?php
-                }
+        ?>
+                <ul>
+                    <li class="com-title"><?php echo $row['ten'] ?><br />
+                        <span>
+                            <?php
+                            $oriDate = $row['date'];
+                            $newDate = date('d-m-Y ', strtotime($oriDate));
+                            echo $newDate;
+                            ?>
+                        </span>
+                    </li>
+                    <li class="com-details"><?php
+                                            echo $row['comment'];
+                                            ?></li>
+                </ul>
+        <?php
+            }
         }
-       
+
         ?>
     </div>
-
-    <!-- <div class="com-pagination"><span>1</span> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a></div> -->
-
 </div>

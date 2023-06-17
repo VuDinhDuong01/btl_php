@@ -3,11 +3,11 @@
 
 
 <div>
-    <div style="width:100% ;background:#000;color:#fff; padding:5px">
-        <h5><?php
+    <div style="width:100% ;background:#000;color:#fff; padding:5px ">
+        <h5 style="margin-left:20px"><?php
             include('cauhinh/ketnoi.php');
             $ten_dm = $_GET['tendanhmuc'];
-            echo $ten_dm;
+             echo $ten_dm;
             ?></h5>
     </div>
 
@@ -48,7 +48,6 @@
         $i = 0;
 
         while ($row = mysqli_fetch_array($query)) {
-
         ?>
             <div class="col-4 mb-2 mt-3">
                 <div class="card" style="width: 18rem;">
@@ -73,4 +72,4 @@
     </div>
 </div>
 
-<div id="pagination"><?php echo $listPage ?></div>
+<!-- <div id="pagination"><?php echo $listPage ?></div> -->

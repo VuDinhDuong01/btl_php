@@ -69,7 +69,7 @@ include('ketnoi.php');
                         <td class="text-center align-middle"><?= $ten ?></td>
                         <td class="text-center align-middle"><?= $address ?></td>
                         <td class="text-center align-middle"><?= $telephone ?></td>
-                        <td class="text-center align-middle"><? echo number_format($total, 0, ',', '.') ?></td>
+                        <td class="text-center align-middle"><?= number_format($total, 0, ',', '.') ?> VNĐ</td>
                         <td class="text-center align-middle"><?= $date ?></td>
                         
                         <td class="text-center align-middle"> <a href="quantri.php?page_layout=xoadonhang&id=<?= $id ?>" onclick='return confirm("bạn có muốn xóa đơn hàng này không!")'><button type="button" class="btn btn-danger">Xóa</button></a></td>

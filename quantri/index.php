@@ -2,6 +2,7 @@
 session_start();
 include('ketnoi.php');
 
+
 $error = NULL;
 if (isset($_POST['submit'])) {
 	if ($_POST['email'] == "") {
@@ -9,7 +10,6 @@ if (isset($_POST['submit'])) {
 	} else {
 		$email = $_POST['email'];
 	}
-
 	if ($_POST['password'] == "") {
 		$error = "Vui lòng nhập tài khoản và mật khẩu";
 	} else {
@@ -21,12 +21,12 @@ if (isset($_POST['submit'])) {
 			$sql = "SELECT * FROM thanhvien WHERE email='$email' AND password= '$password'";
 			$query = mysqli_query($conn, $sql);
 			$rows = mysqli_num_rows($query);
-			if ($rows <= 0) {
-				$error = 'Tài khoản hoặc mật khẩu chưa đúng';
-			} else {
+			if ($rows > 0) {
 				$_SESSION['emailadmin'] = $email;
 				$_SESSION['password'] = $password;
 				header('location:quantri.php');
+			}else{
+				$error="Tài khoản không đúng";
 			}
 		} else {
 			$error = 'Tài khoản này không có quyền';
@@ -49,7 +49,6 @@ if (isset($_POST['submit'])) {
 	<?php
 	if (!isset($_SESSION['emailadmin'])) {
 	?>
-
 		<section class="vh-100 " style="background-color: #9A616D; height:100vh">
 			<div class="container py-5 h-100">
 				<div class="row d-flex justify-content-center align-items-center h-100">
@@ -59,28 +58,24 @@ if (isset($_POST['submit'])) {
 								<div class="col-md-6 col-lg-5 d-none d-md-block ">
 									<img src="anh/anh-login.webp" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%" />
 								</div>
-
 								<div class="col-md-6 col-lg-7 d-flex align-items-center">
 									<div class="card-body p-4 p-lg-5 text-black">
-
 										<form method="post">
-
 											<div class="d-flex align-items-center mb-3 pb-1">
 												<i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
 												<span class="h1 fw-bold mb-0">Chào bạn đến với Logo</span>
 											</div>
-
 											<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
 											<div class="form-outline mb-4">
 												<label class="form-label" for="form2Example17">Email address</label>
-												<input type="text" id="form2Example17" name="email" class="form-control form-control-lg" />
+												<input type="text" required id="form2Example17" name="email" class="form-control form-control-lg" />
 
 											</div>
 
 											<div class="form-outline mb-4">
 												<label class="form-label" for="form2Example27">Password</label>
-												<input type="text" id="form2Example17" name="password" class="form-control form-control-lg" />
+												<input required type="text" id="form2Example17" name="password" class="form-control form-control-lg" />
 												<center><span style="color:red;"><?php echo $error; ?></span></center>
 											</div>
 

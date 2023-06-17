@@ -271,8 +271,18 @@
                          <li class="nav-item d-flex align-items-center">
                              <a href="./pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
                                  <i class="fa fa-user me-sm-1"></i>
+                                 <span class="d-sm-inline d-none">
+                                     <?php
+                                        if (isset($_SESSION['emailadmin'])) {
+                                        ?>
+                                         Xin Chào,<?php echo $_SESSION['emailadmin'] ?>
+                                     <?php
+                                        } else {
+                                            echo "Sign in";
+                                        }
+                                        ?>
 
-                                 <span class="d-sm-inline d-none"> Xin Chào,<?php echo $_SESSION['emailadmin'] ?></span>
+                                 </span>
                              </a>
                          </li>
                      </ul>
@@ -319,15 +329,18 @@
                     case 'xoacommentsp':
                         include('xoacomment.php');
                         break;
-                        case 'quanlydonhang':
-                            include('quanlydonhang.php');
-                            break;
-                            case 'xoadonhang':
-                                include('xoadonhang.php');
-                                break;
-                    case 'quantri':
-                        echo "<script>window.location.href = 'quantri.php';</script>";
+                    case 'quanlydonhang':
+                        include('quanlydonhang.php');
                         break;
+                    case 'xoadonhang':
+                        include('xoadonhang.php');
+                        break;
+                    case 'quantri':
+                        echo "<script>window.location.href = 'index.php';</script>";
+                        break;
+                    default:
+                    include("index.php");
+                    break;
                 }
             } else {
                 $sql = "SELECT*FROM thanhvien";

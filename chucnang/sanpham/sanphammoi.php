@@ -8,7 +8,8 @@
     include('cauhinh/ketnoi.php');
     $sql = "SELECT * FROM sanpham ORDER BY id_sp DESC ";
     $query = mysqli_query($conn, $sql);
-
+    
+    
     while ($row = mysqli_fetch_assoc($query)) {
 
     ?>
