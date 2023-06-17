@@ -215,7 +215,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link text-white" href="">
+                     <a class="nav-link text-white" href="quantri.php?page_layout=quanlydonhang">
                          <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                              <i class="material-icons opacity-10">notifications</i>
                          </div>
@@ -319,6 +319,12 @@
                     case 'xoacommentsp':
                         include('xoacomment.php');
                         break;
+                        case 'quanlydonhang':
+                            include('quanlydonhang.php');
+                            break;
+                            case 'xoadonhang':
+                                include('xoadonhang.php');
+                                break;
                     case 'quantri':
                         echo "<script>window.location.href = 'quantri.php';</script>";
                         break;

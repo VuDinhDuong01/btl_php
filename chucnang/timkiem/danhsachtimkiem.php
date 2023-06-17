@@ -1,7 +1,7 @@
-<link rel="stylesheet" type="text/css" href="css/danhsachtimkiem.css" />
-<div class="prd-block">
-    <?php
+ <link rel="stylesheet" type="text/css" href="css/danhsachtimkiem.css" />
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+ <?php
     include('cauhinh/ketnoi.php');
     if (isset($_POST['stext'])) {
         $stext = $_POST['stext'];
@@ -12,25 +12,29 @@
     $sql = "SELECT * FROM sanpham WHERE ten_sp LIKE '%$newStext%'";
     $query = mysqli_query($conn, $sql);
     ?>
-    <h2>kết quả tìm được với từ khóa <span class="skeyword">"<?php echo $stext ?>"</span></h2>
-    <div class="pr-list">
-        <?php
-        $i = 0;
-        while ($row = mysqli_fetch_assoc($query)) {
-        ?>
-            <div class="prd-item">
-                <a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><img width="80" height="144" src="<?php echo $row['anh_sp'] ?>" /></a>
-                <h3><a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><?php echo $row['ten_sp'] ?></a></h3>
-                <p class="price"><span>Giá: <?php echo $row['gia_sp'] ?> VNĐ</span></p>
-                </p>
-            </div>
-        <?php
-            $i++;
-            if ($i % 3 == 0) {
-                echo ' <div class="clear"></div>';
-            }
-        }
-        ?>
+ <div style="width:100% ;background:#000;color:#fff; padding:5px ; margin-bottom:10px">
+     <h5>kết quả tìm được với từ khóa <span class="skeyword">"<?php echo $stext ?>"</span></h5>
+ </div>
 
-    </div>
-</div>
+ <?php
+    $i = 0;
+    while ($row = mysqli_fetch_assoc($query)) {
+    ?>
+     <div class="col-4 mb-2 ">
+         <div class="card" style="width: 18rem;">
+             <a href="khachhang.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'] ?>"><img class="card-img-top" style="height:180px" src="quantri/<?= $row['anh_sp'] ?>" alt="Card image cap"></a>
+             <div class="card-body">
+                 <h5><?php echo $row['ten_sp'] ?></h5>
+                 <p class="price"><span style="color:red">Giá: <?php echo number_format($row['gia_sp'], 0, ',', '.') ?> VNĐ</span></p>
+                 <p class="card-text text-truncate"><?php echo $row['chi_tiet_sp'] ?></p>
+
+             </div>
+         </div>
+     </div>
+ <?php
+        $i++;
+        if ($i % 3 == 0) {
+            echo '<div class="clear"></div>';
+        }
+    }
+    ?>

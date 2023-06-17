@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="css/chitietsp.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<div class="prd-block">
+<div class="" style="margin-left:150px">
     <div class="prd-only">
         <?php
         include('cauhinh/ketnoi.php');
@@ -10,8 +10,8 @@
         $query = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($query);
         ?>
-        <div class="prd-img d-flex align-items-center" style="height: 50vh;"><img class='my-auto' width="80%" src="<?php echo $row['anh_sp'] ?>" /></div>
-        <div class="prd-intro">
+        <div class="prd-img d-flex align-items-center" style="height: 50vh;"><img class='my-auto' width="80%" src="quantri/<?php echo $row['anh_sp'] ?>" /></div>
+        <div class="prd-intro mt-3">
             <h3 class='mb-5'><?php echo $row['ten_sp'] ?></h3>
             <p>Giá sản phẩm: <span><?php echo number_format($row['gia_sp'], 0, ',', '.') ?> VNĐ</span></p>
             <p>Tình trạng: <span>Vẫn còn</span></p>
@@ -43,7 +43,7 @@
                 <li class="required">Tên <br /><input required type="text" name="ten" /></li>
                 <li class="required">Số điện thoại <br /><input required type="text" required="" name="dien_thoai" /></li>
                 <li class="required">Nội dung <br /><textarea required name="binh_luan"></textarea></li>
-                <li><input type="submit" name="submit" required="" value="Bình luận" /></li>
+                <li><button type="submit" name="submit" class="btn btn-primary">Bình luận</button></li>
             </ul>
         </form>
     </div>
@@ -94,6 +94,6 @@
         ?>
     </div>
 
-    <div class="com-pagination"><span>1</span> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a></div>
+    <!-- <div class="com-pagination"><span>1</span> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a></div> -->
 
 </div>
