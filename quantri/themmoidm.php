@@ -15,7 +15,7 @@
         <div class="input-group mb-3 mt-5">
 
             <form action="" method='post' class='col-12'>
-                <input type="text" class="form-control" name='name' placeholder="tên danh mục">
+                <input type="text" required class="form-control" name='name' placeholder="tên danh mục">
                 <button type="submit" name="submit" class="btn btn-primary mt-3 mb-5">THÊM</button>
                 <button  type="reset" class="btn btn-primary mt-3 mb-5">LÀM MỚI</button>
             </form>

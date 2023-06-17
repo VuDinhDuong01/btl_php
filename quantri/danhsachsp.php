@@ -3,7 +3,7 @@ include_once('ketnoi.php');
 ?>
 <link rel="stylesheet" type="text/css" href="css/danhsachsp.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<div class='px-4 py-2'>
+<div class='px-4'>
     <h2 class='py-3'>Quản lý sản phẩm</h2>
     <p id="add-prd"><a href="quantri.php?page_layout=themsp"><button type="button" class="btn btn-primary">Thêm mới Sản phẩm</button></a></p>
     <table class="table">

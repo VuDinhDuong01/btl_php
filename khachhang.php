@@ -86,13 +86,13 @@ include('cauhinh/ketnoi.php');
                 include_once('chucnang/thongke/thongke.php');
                 ?>
             </div>
-           <div class="col-9 w-100">
+            <div class="col-9 w-100">
                 <div class=' w-100'>
                     <img src="quantri/anh/banner.avif" class='w-100' alt="">
                 </div>
-                
+
                 <?php
-               
+
                 if (isset($_GET['page_layout'])) {
                     switch ($_GET['page_layout']) {
                         case 'gioithieu':
@@ -119,9 +119,9 @@ include('cauhinh/ketnoi.php');
                         case 'muahang':
                             include_once('chucnang/giohang/muahang.php');
                             break;
-                            case 'hoanthanh':
-                                include_once('chucnang/giohang/hoanthanh.php');
-                                break;
+                        case 'hoanthanh':
+                            include_once('chucnang/giohang/hoanthanh.php');
+                            break;
                         default:
                             include_once('chucnang/sanpham/sanphammoi.php');
                     }
@@ -131,7 +131,7 @@ include('cauhinh/ketnoi.php');
 
                 ?>
                 <!-- </div> -->
-               
+
                 <div class="card text-center">
                     <div class="card-header">
                         Footer
@@ -144,10 +144,12 @@ include('cauhinh/ketnoi.php');
                     <div class="card-footer text-muted">
                         2 days ago
                     </div>
-                </div>
+                
+                      
             </div>
-            
         </div>
+
+    </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

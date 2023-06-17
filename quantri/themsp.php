@@ -8,25 +8,25 @@
             <label for="basic-url">Nhập Tên Sản Phẩm</label>
             <div class="input-group mb-3">
 
-                <input type="text" name='ten_sp' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <input type="text" required name='ten_sp' class="form-control" id="basic-url" aria-describedby="basic-addon3">
             </div>
         </div>
         <div class='mb-4'>
             <label for="basic-url">Nhập Gía Sản Phẩm</label>
             <div class="input-group mb-3">
 
-                <input type="text" name='gia_sp' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <input type="text" required name='gia_sp' class="form-control" id="basic-url" aria-describedby="basic-addon3">
             </div>
         </div>
         <div class='mb-4'>
             <label for="basic-url">Nhập file ảnh</label>
             <div class="input-group mb-3">
-                <input type="file" name='anh_sp' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <input type="file" required  name='anh_sp' class="form-control" id="basic-url" aria-describedby="basic-addon3">
             </div>
         </div>
         <div class='mb-4'>
             <label for="basic-url">Chi tiết sản phẩm</label>
-            <textarea class="form-control" name='chi_tiet_sp' aria-label="With textarea"></textarea>
+            <textarea class="form-control" required name='chi_tiet_sp' aria-label="With textarea"></textarea>
         </div>
         <div class='mb-4'>
             <label for="basic-url">Hãng sản xuất</label>

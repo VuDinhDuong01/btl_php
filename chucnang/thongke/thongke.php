@@ -1,6 +1,6 @@
 <div class="w-100" style="background-color:#ccc">
 <div style="width:100% ;background:#000;color:#fff; padding:5px ; margin-bottom:10px ;margin-top:10px">
-        <h5>Liên hệ</h5>
+        <h5>Thống kê</h5>
     </div>
     <div id="counter">
     <?php
