@@ -55,7 +55,6 @@ if (isset($_POST['submit'])) {
 								<div class="col-md-6 col-lg-5 d-none d-md-block ">
 									<img src="anh/anh-login.webp" alt="login" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:100%" />
 								</div>
-
 								<div class="col-md-6 col-lg-7 d-flex align-items-center">
 									<div class="card-body p-4 p-lg-5 text-black">
 
@@ -65,26 +64,24 @@ if (isset($_POST['submit'])) {
 												<span class="h1 fw-bold mb-0">Chào bạn đến với Logo</span>
 											</div>
 
-											<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+											<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Đăng Nhập Tại Đây</h5>
 
 											<div class="form-outline mb-4">
-												<label class="form-label" for="form2Example17">Email address</label>
-												<input type="text" required id="form2Example17" name="email" class="form-control form-control-lg" />
+												<label class="form-label" for="form2Example17">Email</label>
+												<input type="text" required id="form2Example17"  name="email" class="form-control form-control-lg" />
 
 											</div>
 
 											<div class="form-outline mb-4">
-												<label class="form-label" for="form2Example27">Password</label>
-												<input type="text" required id="form2Example17" name="password" class="form-control form-control-lg" />
+												<label class="form-label" for="form2Example27">Mật Khẩu</label>
+												<input type="password" required id="form2Example17" name="password" class="form-control form-control-lg" />
 												<center><span style="color:red;"><?php echo $error; ?></span></center>
 											</div>
 
 											<div class="pt-1 mb-4">
-												<button type="submit" name="submit" class="btn btn-dark btn-lg btn-block">Login</button>
+												<button type="submit" name="submit" class="btn btn-dark btn-lg btn-block">Đăng nhập</button>
 											</div>
-
-											<a class="small text-muted" href="#!">Forgot password?</a>
-											<p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="dangky.php" style="color: #393f81;">Register here</a></p>
+											<p class="mb-5 pb-lg-2" style="color: #393f81;">Bạn đã có tài khoản chưa ! <a href="dangky.php" style="color: #393f81;">Đăng ký tại đây</a></p>
 											<a href="#!" class="small text-muted">Terms of use.</a>
 											<a href="#!" class="small text-muted">Privacy policy</a>
 										</form>

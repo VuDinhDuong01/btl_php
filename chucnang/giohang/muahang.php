@@ -69,13 +69,13 @@
  <?php
     if (isset($_POST['submitthanhtoan'])) {
         include('cauhinh/ketnoi.php');
-        print_r( $totalPriceAll);
+        print_r($totalPriceAll);
         $name = $_POST['ten'];
         $telephone = $_POST['telephone'];
         $address = $_POST['address'];
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $date = date('Y-m-d H:i:s');
-        $id_user_order=$_SESSION['user_id'];
+        $id_user_order = $_SESSION['user_id'];
         $sql = "INSERT INTO orders(id_user_orders,name,telephone,address,total,date) VALUES('$id_user_order','$name','$telephone','$address','$totalPriceAll','$date')";
         $query1 = mysqli_query($conn, $sql);
         $id_order = $conn->insert_id;
@@ -89,7 +89,7 @@
                 $id = $row['id_sp'];
                 $price = $row['gia_sp'];
                 $quanlity = $_SESSION['giohang'][$row['id_sp']];
-                $result = "INSERT INTO order_detail (order_id, product_id,price,quanlity,date) VALUES ('$id_order','$id','$price','$quanlity','$date')";
+                $result = "INSERT INTO order_detail (order_id, product_id,price,quanlity) VALUES ('$id_order','$id','$price','$quanlity')";
                 mysqli_query($conn, $result);
             }
         }

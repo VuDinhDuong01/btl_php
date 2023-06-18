@@ -10,6 +10,10 @@ $gia_sp=$row['gia_sp'];
 $chi_tiet_sp=$row['chi_tiet_sp'];
 $id=$row['id_dm'];
 $image=$row['anh_sp'];
+$cpu=$row['cpu'];
+$ram=$row['ram'];
+$monitor=$row['monitor'];
+$weight=$row['weight'];
 
 if (isset($_POST['submit'])) {
     // Tên Sản phẩm
@@ -48,13 +52,18 @@ if (isset($_POST['submit'])) {
     $ten_sp = $_POST['ten_sp'];
     $gia_sp = $_POST['gia_sp'];
     $chi_tiet_sp = $_POST['chi_tiet_sp'];
+    $ram = $_POST['ram'];
+    $cpu = $_POST['cpu'];
+    $monitor = $_POST['monitor'];
+    $weight= $_POST['weight'];
+
     $target = 'anh/';
     if (!file_exists($target)) {
         mkdir($target, 0777, true);
     }
     $file = $target . basename($_FILES['anh_sp']['name']);
     move_uploaded_file($_FILES['anh_sp']['tmp_name'], $file);
-    $sql = "UPDATE sanpham SET  id_dm='$id' ,ten_sp='$ten_sp',anh_sp='$file',gia_sp='$gia_sp',chi_tiet_sp='$chi_tiet_sp' where id_sp=$id_sp";
+    $sql = "UPDATE sanpham SET  id_dm='$id' ,ten_sp='$ten_sp',anh_sp='$file',gia_sp='$gia_sp',chi_tiet_sp='$chi_tiet_sp',ram='$ram',cpu='$cpu',monitor='$monitor',weight='$weight' where id_sp=$id_sp";
     $query = mysqli_query($conn, $sql);
     echo " <script>window.location.href = 'quantri.php?page_layout=danhsachsp';</script>";
       
@@ -87,6 +96,30 @@ if (isset($_POST['submit'])) {
             <div class="input-group mb-3">
                 <input type="file" name='anh_sp' />
                 <img src="<?= $image ?>" alt="" width="150" height="150" />
+            </div>
+        </div>
+        <div class='mb-4'>
+            <label for="basic-url">Nhập RAM</label>
+            <div class="input-group mb-3">
+                <input type="text" required name='ram' class="form-control" id="basic-url" aria-describedby="basic-addon3" value='<?= $ram ?>'>
+            </div>
+        </div>
+        <div class='mb-4'>
+            <label for="basic-url">Nhập CPU</label>
+            <div class="input-group mb-3">
+                <input type="text" required name='cpu' class="form-control" id="basic-url" aria-describedby="basic-addon3" value='<?= $cpu ?>'>
+            </div>
+        </div>
+        <div class='mb-4'>
+            <label for="basic-url">Nhập giá trị màn hình</label>
+            <div class="input-group mb-3">
+                <input type="text" required name='monitor' class="form-control" id="basic-url" aria-describedby="basic-addon3" value='<?= $monitor ?>'>
+            </div>
+        </div>
+        <div class='mb-4'>
+            <label for="basic-url">Nhập trọng lượng</label>
+            <div class="input-group mb-3">
+                <input type="text" required name='weight' class="form-control" id="basic-url" aria-describedby="basic-addon3" value='<?= $weight ?>'>
             </div>
         </div>
         <div class='mb-4'>

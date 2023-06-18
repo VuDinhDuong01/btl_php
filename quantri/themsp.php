@@ -21,7 +21,31 @@
         <div class='mb-4'>
             <label for="basic-url">Nhập file ảnh</label>
             <div class="input-group mb-3">
-                <input type="file" required  name='anh_sp' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <input type="file" required name='anh_sp' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+        </div>
+        <div class='mb-4'>
+            <label for="basic-url">Nhập RAM</label>
+            <div class="input-group mb-3">
+                <input type="text" required name='ram' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+        </div>
+        <div class='mb-4'>
+            <label for="basic-url">Nhập CPU</label>
+            <div class="input-group mb-3">
+                <input type="text" required name='cpu' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+        </div>
+        <div class='mb-4'>
+            <label for="basic-url">Nhập giá trị màn hình</label>
+            <div class="input-group mb-3">
+                <input type="text" required name='monitor' class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+        </div>
+        <div class='mb-4'>
+            <label for="basic-url">Nhập trọng lượng</label>
+            <div class="input-group mb-3">
+                <input type="text" required name='weight' class="form-control" id="basic-url" aria-describedby="basic-addon3">
             </div>
         </div>
         <div class='mb-4'>
@@ -87,14 +111,17 @@ if (isset($_POST['submit'])) {
     $ten_sp = $_POST['ten_sp'];
     $gia_sp = $_POST['gia_sp'];
     $chi_tiet_sp = $_POST['chi_tiet_sp'];
-    // $image=$_POST['anh_sp'];
+    $cpu = $_POST['cpu'];
+    $ram = $_POST['ram'];
+    $monitor = $_POST['monitor'];
+    $weight = $_POST['weight'];
     $target = 'anh/';
     if (!file_exists($target)) {
         mkdir($target, 0777, true);
     }
     $file = $target . basename($_FILES['anh_sp']['name']);
     move_uploaded_file($_FILES['anh_sp']['tmp_name'], $file);
-    $sql = "INSERT INTO sanpham (id_dm,ten_sp,anh_sp,gia_sp,chi_tiet_sp) VALUES ('$id','$ten_sp','$file','$gia_sp','$chi_tiet_sp')";
+    $sql = "INSERT INTO sanpham (id_dm,ten_sp,anh_sp,gia_sp,chi_tiet_sp, ram, cpu, monitor, weight) VALUES ('$id','$ten_sp','$file','$gia_sp','$chi_tiet_sp','$ram','$cpu','$monitor','$weight')";
     $query = mysqli_query($conn, $sql);
     echo " <script>window.location.href = 'quantri.php?page_layout=danhsachsp';</script>";
 }

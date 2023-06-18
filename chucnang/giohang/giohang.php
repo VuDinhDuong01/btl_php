@@ -7,10 +7,6 @@
      <div class="">
          <?php
             include('cauhinh/ketnoi.php');
-          
-            
-            //  $count = mysqli_num_rows($query);
-          
             if (isset($_SESSION['giohang'])) {
 
                 if (isset($_POST['sl'])) {
@@ -69,13 +65,28 @@
                      <a href="khachhang.php"><button type="button" class="btn btn-success">Tiếp tục mua hàng</button></a>
                      <a href="khachhang.php?page_layout=muahang"><button type="button" class="btn btn-success">Thanh Toán</button></a>
                  </div>
-         <?php
+             <?php
                 } else {
-                    echo 'Giỏ hàng rỗng';
+                ?>
+                 <div class="container mt-5 mb-5">
+                     <div class="text-center">
+                         <h3>Giỏ hàng trống</h3>
+                         <p>Hiện tại không có sản phẩm nào trong giỏ hàng của bạn.</p>
+                         <a href="khachhang.php" class="btn btn-primary">Tiếp tục mua hàng</a>
+                     </div>
+                 </div>
+             <?php
                 }
             } else {
-
-                echo 'Giỏ hàng rỗng';
+                ?>
+             <div class="container mt-5 mb-5">
+                 <div class="text-center">
+                     <h3>Giỏ hàng trống</h3>
+                     <p>Hiện tại không có sản phẩm nào trong giỏ hàng của bạn.</p>
+                     <a href="khachhang.php" class="btn btn-primary">Tiếp tục mua hàng</a>
+                 </div>
+             </div>
+         <?php
             }
             ?>
      </div>

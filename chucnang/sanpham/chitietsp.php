@@ -14,6 +14,11 @@
         <div class="prd-intro mt-3">
             <h3 class='mb-5'><?php echo $row['ten_sp'] ?></h3>
             <p>Giá sản phẩm: <span><?php echo number_format($row['gia_sp'], 0, ',', '.') ?> VNĐ</span></p>
+            <p>RAM: <span><?php echo $row['ram'] ?></span></p>
+            <p>CPU: <span><?php echo $row['cpu'] ?></span></p>
+            <p>Monitor: <span><?php echo $row['monitor'] ?>inches</span></p>
+            <p>Weight: <span><?php echo $row['weight'] ?></span></p>
+           
             <p>Tình trạng: <span>Vẫn còn</span></p>
             <p>Đi kèm: <span>Hôp, sách ,sạc, cáp, tai nghe</span></p>
             <p>Bảo hành: <span> 12 tháng </span></p>

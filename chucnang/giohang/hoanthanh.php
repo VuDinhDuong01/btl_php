@@ -5,11 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Vietpro Mobile Shop - Mua hàng thành công</title>
     <link rel="stylesheet" type="text/css" href="css/trangchu.css" />
-
     <link rel="stylesheet" type="text/css" href="css/hoanthanh.css" />
-
     <link rel="stylesheet" type="text/css" href="css/slideshow.css" />
-
     <script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
 
 

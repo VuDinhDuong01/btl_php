@@ -12,8 +12,8 @@ include('ketnoi.php');
 </head>
 
 <body>
-    <h2 class='pt-3 px-3'>Quản lý đơn hàng</h2>
-    <div class='px-3'> <a href="quantri.php?page_layout=themmoidm"><button type="button" class="btn btn-primary mt-5 mb-2">Thêm mới thư mục</button></a>
+    <h2 class='pt-3 px-3 mb-5'>Quản lý đơn hàng</h2>
+
         <table class="table">
             <thead class="thead-dark">
                 <tr>

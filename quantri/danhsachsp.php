@@ -13,6 +13,11 @@ include_once('ketnoi.php');
                 <th scope="col" class="text-center">Tên Sản Phẩm</th>
                 <th scope="col" class="text-center">Gía</th>
                 <th scope="col" class="text-center">Ảnh Mô Tả</th>
+                <th scope="col" class="text-center">Ram</th>
+                <th scope="col" class="text-center">Cpu</th>
+                <th scope="col" class="text-center">Monitor</th>
+                <th scope="col" class="text-center">Weight</th>
+
                 <th scope="col" class="text-center">Sửa</th>
                 <th scope="col" class="text-center">Xóa</th>
             </tr>
@@ -53,6 +58,10 @@ include_once('ketnoi.php');
                     <td class="text-center align-middle"><a href="#" style="text-decoration: none;color:#000"><?php echo $row['ten_sp']; ?></a></td>
                     <td class="text-center align-middle"><span class="price"><?php echo number_format($row['gia_sp'], 0, ',', '.'); ?>VNĐ</span></td>
                     <td class="text-center align-middle"><span class="thumb"><img width="60" src="<?php echo $row['anh_sp']; ?>" /></span></td>
+                    <td class="text-center align-middle"><span class="thumb"><?php echo $row['ram']; ?>GB </span></td>
+                    <td class="text-center align-middle"><span class="thumb"><?php echo $row['cpu']; ?></span></td>
+                    <td class="text-center align-middle"><span class="thumb"><?php echo $row['monitor']; ?></span></td>
+                    <td class="text-center align-middle"><span class="thumb"><?php echo $row['weight']; ?>kg</span></td>
                     <td class="text-center align-middle"><a href="quantri.php?page_layout=suasp&id_sp=<?php echo $row['id_sp']; ?>"><span><button type="button" class="btn btn-success">Sửa</button></span></a></td>
                     <td class="text-center align-middle"><a href="quantri.php?page_layout=xoasp&id_sp=<?php echo  $row['id_sp']; ?>" onclick='return confirm("bạn có muốn xóa sản phẩm này không!")'><span><button type="button" class="btn btn-danger">Xóa</button></span></a></td>
                 </tr>

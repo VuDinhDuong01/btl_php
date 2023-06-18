@@ -9,16 +9,17 @@
         $stext = '';
     }
     $newStext = str_replace(' ', '%', $stext);
-    $sql = "SELECT * FROM sanpham WHERE ten_sp LIKE '%$newStext%'";
+    $sql = "SELECT * FROM sanpham WHERE (ten_sp LIKE '%$newStext%') OR (ram = '$newStext') OR (cpu = '$newStext') OR ((ten_sp LIKE '%$newStext%') AND (ram = '$newStext')) OR ((ten_sp LIKE '%$newStext%') AND (cpu = '$newStext'))";
+
     $query = mysqli_query($conn, $sql);
     ?>
  <div style="width:100% ;background:#000;color:#fff; padding:5px ; margin-bottom:10px">
      <h5>kết quả tìm được với từ khóa <span class="skeyword">"<?php echo $stext ?>"</span></h5>
  </div>
-<div class="row w-100">
-    <?php
-     $i = 0;
-    while ($row = mysqli_fetch_assoc($query)) {
+ <div class="row w-100">
+     <?php
+        $i = 0;
+        while ($row = mysqli_fetch_assoc($query)) {
         ?>
          <div class="col-4 mb-2 ">
              <div class="card" style="width: 18rem;">
@@ -27,20 +28,16 @@
                      <h5><?php echo $row['ten_sp'] ?></h5>
                      <p class="price"><span style="color:red">Giá: <?php echo number_format($row['gia_sp'], 0, ',', '.') ?> VNĐ</span></p>
                      <p class="card-text text-truncate"><?php echo $row['chi_tiet_sp'] ?></p>
-    
+
                  </div>
              </div>
          </div>
-        <?php
+     <?php
             $i++;
-            if ($i % 3 == 0) 
-            {
+            if ($i % 3 == 0) {
                 echo '<div class="clear"></div>';
             }
         }
-     ?>
-</div>
-<?php ?>
-
-   
-    
+        ?>
+ </div>
+ <?php ?>
